@@ -37,27 +37,29 @@ function toggleTheme () {
 
 <style>
 .box1{
-  width: 100px;
+  width: 100px!important;
   height: 100px;
   position: absolute;
   top: 100px;
   left: 100px;
   z-index: 1000;
+  pointer-events: none;
   animation: box1 2s ease-in-out infinite;
 }
 
 .box2{
-  width: 100px;
+  width: 100px!important;
   height: 100px;
   position: absolute;
   top: 80%;
   left: 5%;
   z-index: 1000;
+  pointer-events: none;
   animation: box2 8s ease-in infinite;
 }
 
 .box3{
-  width: 100px;
+  width: 100px!important;
   height: 100px;
   position: absolute;
   top: 55%;
