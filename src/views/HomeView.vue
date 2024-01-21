@@ -1,17 +1,17 @@
 <template lang="pug">
 v-container
   v-row
-    v-col.text-center(cols="12")
+    v-col.text-center.text(cols="12")
       h1 {{ currentText }}
       h1 {{ currentTime }}
-    v-col.text-center(cols="12")
+    v-col.text-center.text(cols="12")
       //- :disabled="status === STATUS.COUNTING" 如果我的狀態是倒數中，停用此功能
       //- :disabled="status !== STATUS.COUNTING" 如果我的狀態不是倒數中，停用此功能
       //- :disabled="currentItem.length === 0" 現在沒有項目，停用此按鈕
-      v-btn(variant="text" icon="mdi-play" :disabled="status === STATUS.COUNTING || (currentItem.length === 0 && items.length === 0)"
+      v-btn(size variant="text" icon="mdi-play" :disabled="status === STATUS.COUNTING || (currentItem.length === 0 && items.length === 0)"
       @click="startTimer")
-      v-btn(variant="text" icon="mdi-pause" :disabled="status !== STATUS.COUNTING" @click="pauseTimer")
-      v-btn(variant="text" icon="mdi-skip-next" :disabled="currentItem.length === 0" @click='finishTimer')
+      v-btn(size variant="text" icon="mdi-pause" :disabled="status !== STATUS.COUNTING" @click="pauseTimer")
+      v-btn(size variant="text" icon="mdi-skip-next" :disabled="currentItem.length === 0" @click='finishTimer')
 </template>
 
 <script setup>
@@ -108,3 +108,10 @@ const currentTime = computed(() => {
 })
 
 </script>
+
+<style>
+.text{
+  font-size: 48px;
+  text-shadow: 0px 0px 10px rgba(96, 201, 10, 0.8),0px 0px 30px rgba(58, 199, 105, 0.8);
+}
+</style>
