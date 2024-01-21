@@ -9,6 +9,12 @@ v-app
       v-btn(@click="toggleTheme")
         v-icon mdi-theme-light-dark
   v-main
+    v-col.box1
+      v-img(src="@/assets/zombie_surprised.png")
+    v-col.box2
+      v-img(src="@/assets/zombie_grinning.png")
+    v-col.box3
+      v-img(src="@/assets/zombie_cool.png")
     //- Component = 目前該顯示的路由元件
     router-view(v-slot="{ Component }")
       //-  keep-alive 裡面的東西不會被銷毀(保持被包住的元件不被銷毀)
@@ -28,3 +34,75 @@ function toggleTheme () {
 }
 
 </script>
+
+<style>
+.box1{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  z-index: 1000;
+  animation: box1 2s ease-in-out infinite;
+}
+
+.box2{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  z-index: 1000;
+  animation: box2 8s ease-in infinite;
+}
+
+.box3{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  z-index: 1000;
+  animation: box3 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes box1{
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes box2{
+  0% {
+    /* transform: rotateY(0deg); */
+  }
+  50% {
+    /* transform: rotateY(90deg); */
+    transform: translateX(80vw);
+  }
+  100% {
+    /* transform: rotateY(0deg); */
+  }
+}
+
+@keyframes box3{
+  0% {
+   opacity: 0;
+  }
+  50% {
+   opacity: 1;
+   transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+</style>
